@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EO Forum 5% 月度反思 · Monthly Reflection Companion</title>
+
+<!-- iOS PWA meta tags — enables "Add to Home Screen" full-screen app experience -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="5% 反思">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#2a4d7f">
+<link rel="manifest" href="manifest.json">
+
+<!-- Apple touch icon: inline SVG as data URL so no separate icon file is needed -->
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMyYTRkN2YiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzZiNGVlOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U5NGI2YiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iNDAiIGZpbGw9InVybCgjZykiLz48dGV4dCB4PSI5MCIgeT0iMTE1IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjUlPC90ZXh0Pjwvc3ZnPg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMyYTRkN2YiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzZiNGVlOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U5NGI2YiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iNDAiIGZpbGw9InVybCgjZykiLz48dGV4dCB4PSI5MCIgeT0iMTE1IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjUlPC90ZXh0Pjwvc3ZnPg==">
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --ink: #1f2937;
+    --ink-soft: #4b5563;
+    --ink-mute: #6b7280;
+    --line: #e5e7eb;
+    --line-soft: #f0f0ee;
+    --accent: #2a4d7f;
+    --accent-soft: #eaf0f8;
+    --work: #2a4d7f;
+    --family: #e94b6b;
+    --personal: #2dbfa0;
+    --future: #8b5cf6;
+    --warn: #d97706;
+    --good: #059669;
+    --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.05);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Segoe UI", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .en { color: var(--ink-mute); font-size: 0.85em; font-style: italic; font-weight: normal; }
+  main { max-width: 920px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 24px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 18px; margin: 0 0 14px; letter-spacing: -0.005em; }
+  h3 { font-size: 15px; margin: 0 0 10px; color: var(--ink-soft); font-weight: 600; }
+  p { margin: 0 0 8px; }
+  small { color: var(--ink-mute); font-size: 12px; }
+
+  .header {
+    background: linear-gradient(135deg, #2a4d7f 0%, #6b4ee8 50%, #e94b6b 100%);
+    color: white;
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header h1 { color: white; }
+  .header .subtitle { color: rgba(255,255,255,.85); font-size: 13px; margin-top: 2px; }
+  .header-row {
+    display: flex; gap: 18px; align-items: flex-end; flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .field-light { display: flex; flex-direction: column; gap: 4px; }
+  .field-light label { font-size: 11px; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: 0.05em; }
+  .field-light input {
+    background: rgba(255,255,255,.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  .field-light input::placeholder { color: rgba(255,255,255,.55); }
+
+  details.vm {
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    margin-top: 14px;
+    color: rgba(255,255,255,.92);
+    font-size: 13px;
+  }
+  details.vm summary { cursor: pointer; font-weight: 600; }
+  details.vm textarea {
+    width: 100%; margin-top: 8px;
+    background: rgba(255,255,255,.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,.20);
+    border-radius: 6px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    resize: vertical;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .hint {
+    font-size: 12px; color: var(--ink-mute);
+    background: var(--line-soft);
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 0 0 12px;
+  }
+
+  /* Life Quality Dashboard */
+  .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .dim {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+  }
+  .dim-label {
+    font-size: 13px; font-weight: 600; color: var(--ink-soft);
+    margin-bottom: 6px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .dim-row { display: flex; align-items: center; gap: 8px; }
+  .dim input[type=range] { flex: 1; accent-color: var(--accent); }
+  .dim .val {
+    background: var(--accent); color: white;
+    width: 32px; height: 32px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .last-month {
+    margin-top: 6px; font-size: 11px; color: var(--ink-mute);
+    display: flex; justify-content: space-between;
+  }
+  .trend-up { color: var(--good); font-weight: 600; }
+  .trend-down { color: #dc2626; font-weight: 600; }
+  .trend-same { color: var(--ink-mute); }
+
+  /* Weather */
+  .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .weather-cell {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+  }
+  .weather-cell input {
+    width: 100%; padding: 8px 10px;
+    border: 1px solid var(--line); border-radius: 6px;
+    font-family: inherit; font-size: 14px;
+  }
+  .weather-prev { font-size: 11px; color: var(--ink-mute); margin-top: 6px; }
+
+  /* 5% Grid */
+  .reflect-card { border-left: 5px solid var(--accent); }
+  .reflect-card[data-cat="work"] { border-left-color: var(--work); }
+  .reflect-card[data-cat="family"] { border-left-color: var(--family); }
+  .reflect-card[data-cat="personal"] { border-left-color: var(--personal); }
+  .reflect-card[data-cat="future"] { border-left-color: var(--future); }
+
+  .reflect-card .pill[data-cat="work"] { background: #eaf0f8; color: var(--work); }
+  .reflect-card .pill[data-cat="family"] { background: #fce8ec; color: var(--family); }
+  .reflect-card .pill[data-cat="personal"] { background: #e1f5ee; color: var(--personal); }
+  .reflect-card .pill[data-cat="future"] { background: #efe9fc; color: var(--future); }
+
+  .reflect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .reflect-grid { grid-template-columns: 1fr; }
+  }
+  .field { display: flex; flex-direction: column; gap: 4px; }
+  .field label {
+    font-size: 11px; font-weight: 600; color: var(--ink-soft);
+    text-transform: uppercase; letter-spacing: 0.04em;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .field .ratio {
+    font-size: 10px; color: var(--ink-mute); font-weight: 500;
+    text-transform: none; letter-spacing: 0;
+  }
+  .field input, .field textarea {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 8px 10px;
+    font-family: inherit; font-size: 14px;
+    background: white;
+    color: var(--ink);
+    width: 100%;
+    resize: vertical;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .field .meter {
+    font-size: 11px; margin-top: 2px;
+    color: var(--ink-mute);
+  }
+  .field .meter.warn { color: var(--warn); font-weight: 600; }
+
+  .feel-tools {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;
+  }
+  .chip-btn {
+    background: white; border: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 11px;
+    padding: 3px 8px; border-radius: 99px;
+    cursor: pointer; font-family: inherit;
+  }
+  .chip-btn:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+
+  .iceberg {
+    margin-top: 6px;
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--accent);
+    display: none;
+  }
+  .iceberg.active { display: block; }
+  .iceberg ol { margin: 4px 0 0 18px; padding: 0; }
+  .iceberg ol li { margin-bottom: 4px; }
+
+  /* Parking Lot */
+  .pl-add { display: flex; gap: 8px; margin-bottom: 10px; }
+  .pl-add input {
+    flex: 1; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px;
+    font-family: inherit; font-size: 14px;
+  }
+  .pl-add button {
+    background: var(--accent); color: white; border: none;
+    padding: 8px 14px; border-radius: 6px; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+  }
+  .pl-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 720px) { .pl-cols { grid-template-columns: 1fr; } }
+  .pl-col {
+    background: var(--bg); border-radius: var(--radius-sm);
+    padding: 12px; min-height: 80px;
+    border: 1px solid var(--line);
+  }
+  .pl-col h4 { margin: 0 0 8px; font-size: 13px; }
+  .pl-col[data-type="why"] h4 { color: var(--family); }
+  .pl-col[data-type="how"] h4 { color: var(--accent); }
+  .pl-item {
+    background: white; border: 1px solid var(--line);
+    border-radius: 6px; padding: 6px 10px; margin-bottom: 6px;
+    font-size: 13px;
+    display: flex; justify-content: space-between; align-items: center; gap: 6px;
+  }
+  .pl-item button {
+    background: transparent; border: none; cursor: pointer;
+    color: var(--ink-mute); font-size: 16px; padding: 0; line-height: 1;
+  }
+  .pl-item .swap { color: var(--accent); font-size: 11px; }
+
+  /* Action bar */
+  .actions {
+    position: sticky; bottom: 0;
+    background: rgba(247,247,245,.95);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line);
+    padding: 14px 0;
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .actions button {
+    background: white; border: 1px solid var(--line);
+    color: var(--ink); padding: 10px 16px;
+    border-radius: 8px; font-size: 14px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .actions button:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .actions button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .actions button.primary:hover { background: #1f3a61; }
+
+  /* NVC Modal */
+  .modal {
+    display: none; position: fixed; inset: 0;
+    background: rgba(15,23,42,.5);
+    z-index: 100;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .modal.open { display: flex; }
+  .modal-inner {
+    background: white; border-radius: var(--radius);
+    width: 100%; max-width: 760px; max-height: 90vh;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .modal-head {
+    padding: 16px 22px; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .modal-tabs { display: flex; gap: 4px; padding: 12px 22px 0; }
+  .tab {
+    background: transparent; border: none; padding: 8px 14px;
+    border-radius: 6px; cursor: pointer; font-family: inherit;
+    font-size: 13px; font-weight: 600; color: var(--ink-mute);
+  }
+  .tab.active { background: var(--accent-soft); color: var(--accent); }
+  .modal-body { padding: 18px 22px; overflow-y: auto; flex: 1; }
+  .modal-close {
+    background: transparent; border: none; cursor: pointer;
+    font-size: 22px; color: var(--ink-mute); padding: 0;
+  }
+  .nvc-cat {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nvc-cat h4 {
+    font-size: 13px; margin: 0 0 6px;
+    color: var(--accent); font-weight: 700;
+  }
+  .nvc-cat .en-h { font-size: 11px; color: var(--ink-mute); margin-left: 6px; font-style: italic; }
+  .nvc-words { display: flex; gap: 4px; flex-wrap: wrap; }
+  .nvc-word {
+    background: var(--bg); border: 1px solid var(--line);
+    color: var(--ink-soft);
+    padding: 3px 9px; border-radius: 99px;
+    font-size: 12px; cursor: pointer; font-family: inherit;
+  }
+  .nvc-word:hover { background: var(--accent); color: white; border-color: var(--accent); }
+  .nvc-word .en { font-size: 9px; color: inherit; opacity: 0.7; margin-left: 3px; font-style: normal; }
+  .nvc-target-info {
+    background: var(--accent-soft); color: var(--accent);
+    padding: 8px 12px; border-radius: 6px; font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Tips banner */
+  .tips {
+    background: #fffbeb; border: 1px solid #fde68a;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px; margin-bottom: 16px;
+    font-size: 13px;
+  }
+  .tips strong { color: #92400e; }
+  .tips ul { margin: 6px 0 0 18px; padding: 0; color: var(--ink-soft); }
+  .tips li { margin-bottom: 3px; }
+
+  /* Print styling */
+  @media print {
+    body { background: white; font-size: 11pt; }
+    main { padding: 0; max-width: 100%; }
+    .header {
+      background: white !important; color: var(--ink) !important;
+      border: 1px solid var(--line); margin-bottom: 12px;
+      padding: 12px 16px;
+    }
+    .header h1, .header .subtitle, .field-light label, .field-light input {
+      color: var(--ink) !important;
+    }
+    .field-light input { background: white !important; border-color: var(--line) !important; }
+    details.vm { background: var(--bg) !important; border: 1px solid var(--line); color: var(--ink) !important; }
+    details.vm[open] summary { display: none; }
+    details.vm textarea { background: white !important; color: var(--ink) !important; border: 1px solid var(--line) !important; }
+    .actions, .feel-tools, .pl-add, .modal { display: none !important; }
+    .iceberg { display: none !important; }
+    .card { box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
+    .reflect-card { break-inside: avoid; page-break-inside: avoid; }
+    .field input, .field textarea { border-color: var(--line) !important; background: white !important; }
+    textarea { min-height: 60px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- ============================================ HEADER ============================================ -->
+  <header class="header">
+    <h1>5% 月度反思 · Monthly 5% Reflection</h1>
+    <div class="subtitle">EO Forum 准备工作表 · Preparation Companion</div>
+
+    <div class="header-row">
+      <div class="field-light" style="flex:1; min-width:140px;">
+        <label>姓名 · Name</label>
+        <input type="text" id="memberName" placeholder="您的姓名 / Your name">
+      </div>
+      <div class="field-light" style="flex:1; min-width:140px;">
+        <label>会议月份 · Meeting Month</label>
+        <input type="month" id="meetingMonth">
+      </div>
+      <div class="field-light" style="flex:1; min-width:140px;">
+        <label>Forum 名称 · Forum Name</label>
+        <input type="text" id="forumName" placeholder="可选 / optional">
+      </div>
+    </div>
+
+    <details class="vm">
+      <summary>Forum 愿景与使命 · Vision & Mission (点击展开 / click to expand)</summary>
+      <div style="margin-top:8px;">
+        <label style="font-size:11px; opacity:.85;">愿景 · Vision</label>
+        <textarea id="vision" rows="2">透过信任、分享和学习，相互支持全方位的突破与成长，实现自我价值，创造丰富人生。
+Through trust, sharing, and learning, we support each other in breakthroughs and growth across every dimension — realizing self-worth and creating an abundant life.</textarea>
+      </div>
+      <div style="margin-top:8px;">
+        <label style="font-size:11px; opacity:.85;">使命 · Mission</label>
+        <textarea id="mission" rows="3">高效与深层次的深潜与陈述。每次会议都要有总结和收获。提高 Forum 成员满意度。
+Efficient and deep Deep Dives and presentations. Every meeting brings closure and takeaways. Improve Forum member satisfaction.</textarea>
+      </div>
+    </details>
+  </header>
+
+  <!-- ============================================ TIPS ============================================ -->
+  <div class="tips">
+    <strong>5% 准备小提示 · Prep Tips</strong>
+    <ul>
+      <li>感受 · <em>Feelings</em>：使用真实而丰富的词汇 — 不是"压力大"，而是"被压垮"、"焦虑"、"无能为力"。<span class="en">Use precise, rich vocabulary — not "stressed," but "overwhelmed," "anxious," "helpless."</span></li>
+      <li>标题 · <em>Headline</em>：只用一句话。不超过约 15 个字。<span class="en">One sentence only. Around 15 characters max.</span></li>
+      <li>意义 · <em>Significance</em>：这才是 80% 的重点。深入挖掘 — "为什么对我重要？" "我从中认识到什么？"<span class="en">This is the 80%. Dig deep — "Why does this matter to me?" "What do I realize about myself?"</span></li>
+      <li>切勿沉浸在叙述故事中。专注于 5%。<span class="en">Don't get lost in story. Focus on the 5%.</span></li>
+    </ul>
+  </div>
+
+  <!-- ============================================ LIFE QUALITY DASHBOARD ============================================ -->
+  <section class="card">
+    <div class="card-header">
+      <h2>生活质量仪表 · Life Quality Dashboard</h2>
+      <span class="pill">1–10</span>
+    </div>
+    <p class="hint">5 分是平均分。与上月对比可帮助您观察长期趋势。<span class="en">5 = average. Comparison with last month helps you spot longer trends.</span></p>
+
+    <div class="dashboard-grid" id="dashboardGrid">
+      <!-- Generated by JS -->
+    </div>
+  </section>
+
+  <!-- ============================================ WEATHER REPORT ============================================ -->
+  <section class="card">
+    <div class="card-header">
+      <h2>一字晴雨表 · One-Word Weather Report</h2>
+      <span class="pill">1 word</span>
+    </div>
+    <p class="hint">一个词描述您此刻的状态。会议开场和结束分别记录，用于对比与反思。<span class="en">A single word capturing your state. Captured at meeting open and close, for comparison and reflection.</span></p>
+
+    <div class="weather-grid">
+      <div class="weather-cell">
+        <h3>本月开场 · This Month Opening</h3>
+        <input type="text" id="weatherOpen" maxlength="20" placeholder="一个词 / one word">
+        <div class="weather-prev" id="weatherOpenPrev"></div>
+      </div>
+      <div class="weather-cell">
+        <h3>本月结束 · This Month Closing</h3>
+        <input type="text" id="weatherClose" maxlength="20" placeholder="一个词 / one word">
+        <div class="weather-prev" id="weatherClosePrev"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ 5% REFLECTIONS GRID ============================================ -->
+  <section class="card reflect-card" data-cat="work">
+    <div class="card-header">
+      <h2>事业 · Work</h2>
+      <span class="pill" data-cat="work">10% / 10% / 80%</span>
+    </div>
+    <div class="reflect-grid">
+      <div class="field">
+        <label>感受 · Feelings <span class="ratio">10%</span></label>
+        <input type="text" id="work_feelings" placeholder="3–5 个词 / 3–5 words" data-key="feelings" data-cat="work">
+        <div class="feel-tools">
+          <button class="chip-btn" type="button" onclick="openNVC('work_feelings')">📖 词汇库 · NVC inventory</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>标题 · Headline <span class="ratio">10% · 1 sentence</span></label>
+        <input type="text" id="work_headline" placeholder="一句话 / one sentence" data-key="headline" data-cat="work">
+        <div class="meter" id="work_headline_meter"></div>
+      </div>
+      <div class="field">
+        <label>意义 · Significance <span class="ratio">80% · the 5%</span></label>
+        <textarea id="work_significance" rows="4" placeholder="为什么这件事对我个人有意义？我从中认识到什么？&#10;Why is this personally significant? What do I realize about myself?" data-key="significance" data-cat="work"></textarea>
+        <button class="chip-btn" type="button" onclick="toggleIceberg('work')" style="align-self:flex-start; margin-top:4px;">🧊 深入挖掘 · Dig Deeper</button>
+        <div class="iceberg" id="work_iceberg">
+          <strong>四层挖掘 · Four Layers Deeper</strong>
+          <ol>
+            <li>这件事为什么对<strong>我</strong>个人有意义？<span class="en">Why is this personally significant to me?</span></li>
+            <li>这反映了我什么样的核心需要、价值观或信念？<span class="en">What core need, value, or belief does this reflect?</span></li>
+            <li>我从中认识到自己什么？<span class="en">What do I realize about myself?</span></li>
+            <li>这是否让我想起过去类似的感受或经历？<span class="en">Does this remind me of similar past feelings or experiences?</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card reflect-card" data-cat="family">
+    <div class="card-header">
+      <h2>家庭 · Family</h2>
+      <span class="pill" data-cat="family">10% / 10% / 80%</span>
+    </div>
+    <div class="reflect-grid">
+      <div class="field">
+        <label>感受 · Feelings <span class="ratio">10%</span></label>
+        <input type="text" id="family_feelings" placeholder="3–5 个词 / 3–5 words" data-key="feelings" data-cat="family">
+        <div class="feel-tools">
+          <button class="chip-btn" type="button" onclick="openNVC('family_feelings')">📖 词汇库 · NVC inventory</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>标题 · Headline <span class="ratio">10% · 1 sentence</span></label>
+        <input type="text" id="family_headline" placeholder="一句话 / one sentence" data-key="headline" data-cat="family">
+        <div class="meter" id="family_headline_meter"></div>
+      </div>
+      <div class="field">
+        <label>意义 · Significance <span class="ratio">80% · the 5%</span></label>
+        <textarea id="family_significance" rows="4" placeholder="为什么这件事对我个人有意义？我从中认识到什么？&#10;Why is this personally significant? What do I realize about myself?" data-key="significance" data-cat="family"></textarea>
+        <button class="chip-btn" type="button" onclick="toggleIceberg('family')" style="align-self:flex-start; margin-top:4px;">🧊 深入挖掘 · Dig Deeper</button>
+        <div class="iceberg" id="family_iceberg">
+          <strong>四层挖掘 · Four Layers Deeper</strong>
+          <ol>
+            <li>这件事为什么对<strong>我</strong>个人有意义？<span class="en">Why is this personally significant to me?</span></li>
+            <li>这反映了我什么样的核心需要、价值观或信念？<span class="en">What core need, value, or belief does this reflect?</span></li>
+            <li>我从中认识到自己什么？<span class="en">What do I realize about myself?</span></li>
+            <li>这是否让我想起过去类似的感受或经历？<span class="en">Does this remind me of similar past feelings or experiences?</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card reflect-card" data-cat="personal">
+    <div class="card-header">
+      <h2>个人 · Personal</h2>
+      <span class="pill" data-cat="personal">10% / 10% / 80%</span>
+    </div>
+    <div class="reflect-grid">
+      <div class="field">
+        <label>感受 · Feelings <span class="ratio">10%</span></label>
+        <input type="text" id="personal_feelings" placeholder="3–5 个词 / 3–5 words" data-key="feelings" data-cat="personal">
+        <div class="feel-tools">
+          <button class="chip-btn" type="button" onclick="openNVC('personal_feelings')">📖 词汇库 · NVC inventory</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>标题 · Headline <span class="ratio">10% · 1 sentence</span></label>
+        <input type="text" id="personal_headline" placeholder="一句话 / one sentence" data-key="headline" data-cat="personal">
+        <div class="meter" id="personal_headline_meter"></div>
+      </div>
+      <div class="field">
+        <label>意义 · Significance <span class="ratio">80% · the 5%</span></label>
+        <textarea id="personal_significance" rows="4" placeholder="为什么这件事对我个人有意义？我从中认识到什么？&#10;Why is this personally significant? What do I realize about myself?" data-key="significance" data-cat="personal"></textarea>
+        <button class="chip-btn" type="button" onclick="toggleIceberg('personal')" style="align-self:flex-start; margin-top:4px;">🧊 深入挖掘 · Dig Deeper</button>
+        <div class="iceberg" id="personal_iceberg">
+          <strong>四层挖掘 · Four Layers Deeper</strong>
+          <ol>
+            <li>这件事为什么对<strong>我</strong>个人有意义？<span class="en">Why is this personally significant to me?</span></li>
+            <li>这反映了我什么样的核心需要、价值观或信念？<span class="en">What core need, value, or belief does this reflect?</span></li>
+            <li>我从中认识到自己什么？<span class="en">What do I realize about myself?</span></li>
+            <li>这是否让我想起过去类似的感受或经历？<span class="en">Does this remind me of similar past feelings or experiences?</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card reflect-card" data-cat="future">
+    <div class="card-header">
+      <h2>未来 30–60 天 · Next 30–60 Days</h2>
+      <span class="pill" data-cat="future">looking forward</span>
+    </div>
+    <div class="reflect-grid">
+      <div class="field">
+        <label>感受 · Feelings <span class="ratio">10%</span></label>
+        <input type="text" id="future_feelings" placeholder="3–5 个词 / 3–5 words" data-key="feelings" data-cat="future">
+        <div class="feel-tools">
+          <button class="chip-btn" type="button" onclick="openNVC('future_feelings')">📖 词汇库 · NVC inventory</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>标题 · Headline <span class="ratio">10% · 1 sentence</span></label>
+        <input type="text" id="future_headline" placeholder="一句话 / one sentence" data-key="headline" data-cat="future">
+        <div class="meter" id="future_headline_meter"></div>
+      </div>
+      <div class="field">
+        <label>意义 · Significance <span class="ratio">80% · the 5%</span></label>
+        <textarea id="future_significance" rows="4" placeholder="为什么这件事对我个人有意义？我从中认识到什么？&#10;Why is this personally significant? What do I realize about myself?" data-key="significance" data-cat="future"></textarea>
+        <button class="chip-btn" type="button" onclick="toggleIceberg('future')" style="align-self:flex-start; margin-top:4px;">🧊 深入挖掘 · Dig Deeper</button>
+        <div class="iceberg" id="future_iceberg">
+          <strong>四层挖掘 · Four Layers Deeper</strong>
+          <ol>
+            <li>这件事为什么对<strong>我</strong>个人有意义？<span class="en">Why is this personally significant to me?</span></li>
+            <li>这反映了我什么样的核心需要、价值观或信念？<span class="en">What core need, value, or belief does this reflect?</span></li>
+            <li>我从中认识到自己什么？<span class="en">What do I realize about myself?</span></li>
+            <li>这是否让我想起过去类似的感受或经历？<span class="en">Does this remind me of similar past feelings or experiences?</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ CELEBRATIONS ============================================ -->
+  <section class="card">
+    <div class="card-header">
+      <h2>庆祝与胜利 · Celebrations & Wins</h2>
+      <span class="pill">share</span>
+    </div>
+    <p class="hint">这个月想与 Forum 一起庆祝的成就、胜利或获得的事情。<span class="en">Achievements, wins, or things you gained this month that you'd like to celebrate with Forum.</span></p>
+    <textarea id="celebrations" rows="3" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px; resize:vertical;" placeholder="一项或多项 / one or more"></textarea>
+  </section>
+
+  <!-- ============================================ PARKING LOT ============================================ -->
+  <section class="card">
+    <div class="card-header">
+      <h2>停车场话题 · Parking Lot Topics</h2>
+      <span class="pill">classify</span>
+    </div>
+    <p class="hint">添加任何想与 Forum 讨论的话题，然后归类。<strong>"Why" 话题</strong>（情感复杂、未决） → 适合深潜。<strong>"What/How" 话题</strong>（学习、决策） → 适合主题讨论或专家分享。<span class="en">Add topics, then classify. "Why" topics (emotionally complex, undecided) → Deep Dive candidates. "What/How" topics (learning, decision-making) → topical discussion or expert.</span></p>
+
+    <div class="pl-add">
+      <input type="text" id="plInput" placeholder="输入话题 / Enter a topic, then press Enter">
+      <button onclick="addParkingTopic()">+ 添加</button>
+    </div>
+
+    <div class="pl-cols">
+      <div class="pl-col" data-type="why">
+        <h4>🌊 Why 话题 · Deep Dive Candidates</h4>
+        <small>情感复杂、未决、卡住 / Emotionally complex, undecided, stuck</small>
+        <div id="plWhy" style="margin-top:8px;"></div>
+      </div>
+      <div class="pl-col" data-type="how">
+        <h4>📋 What/How 话题 · Topical / Expert</h4>
+        <small>学习、决策、技能 / Learning, decision-making, skill</small>
+        <div id="plHow" style="margin-top:8px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ ACTIONS ============================================ -->
+  <div class="actions">
+    <button class="primary" onclick="window.print()">🖨 打印 / 导出 PDF · Print / Save as PDF</button>
+    <button onclick="downloadJSON()">💾 备份 (JSON) · Save Backup</button>
+    <button onclick="document.getElementById('uploadJSON').click()">📂 载入备份 · Load Backup</button>
+    <input type="file" id="uploadJSON" accept=".json" style="display:none;" onchange="loadJSON(event)">
+    <button onclick="if (confirm('清空当前表单？(已保存的历史月份不会受影响)\nClear current form? (Saved month history is not affected)')) clearForm()">🗑 清空 · Clear</button>
+  </div>
+
+  <!-- ============================================ NVC MODAL ============================================ -->
+  <div class="modal" id="nvcModal" onclick="if(event.target===this) closeNVC()">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <div>
+          <h2 style="margin:0;">感受词汇库 · Feelings Inventory</h2>
+          <small>基于 CNVC 非暴力沟通 / Based on CNVC Nonviolent Communication</small>
+        </div>
+        <button class="modal-close" onclick="closeNVC()">×</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="tab active" id="tabMet" onclick="switchNVCTab('met')">需求得到满足 · Needs Met</button>
+        <button class="tab" id="tabUnmet" onclick="switchNVCTab('unmet')">需求未满足 · Needs Unmet</button>
+      </div>
+      <div class="modal-body">
+        <div class="nvc-target-info" id="nvcTargetInfo">点击词语将其追加到感受栏 · Click a word to append it to the feelings field</div>
+        <div id="nvcContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center; color:var(--ink-mute); font-size:12px; margin-top:24px;">
+    本工具仅本地运行 — 数据保存在您的浏览器中，不会上传任何服务器。<br>
+    <span class="en">This tool runs entirely locally — data stays in your browser, nothing is uploaded.</span>
+  </footer>
+
+</main>
+
+<script>
+/* ============================================ NVC FEELINGS DATA ============================================ */
+const NVC_MET = [
+  { zh: "深情", en: "Affectionate", words: [
+    ["富有同情心","compassionate"],["友好","friendly"],["充满爱心","loving"],["坦率热情","open-hearted"],
+    ["有同情心","sympathetic"],["温柔","tender"],["温暖","warm"]
+  ]},
+  { zh: "自信", en: "Confident", words: [
+    ["赋能","empowered"],["开放","open"],["自豪","proud"],["安全","safe"],["有安全感","secure"]
+  ]},
+  { zh: "投入", en: "Engaged", words: [
+    ["专心致志","absorbed"],["警惕","alert"],["好奇","curious"],["全神贯注","engrossed"],["着迷","enchanted"],
+    ["入迷","entranced"],["热爱","fascinated"],["感兴趣","interested"],["专心","intrigued"],
+    ["神魂颠倒","involved"],["受到激励","stimulated"]
+  ]},
+  { zh: "深受启发", en: "Inspired", words: [
+    ["大为惊叹","amazed"],["敬畏","awed"],["好奇","wonder"]
+  ]},
+  { zh: "满怀希望", en: "Hopeful", words: [
+    ["满怀期待","expectant"],["备受鼓舞","encouraged"],["乐观","optimistic"]
+  ]},
+  { zh: "兴奋", en: "Excited", words: [
+    ["大为惊讶","amazed"],["活泼","animated"],["热心","ardent"],["激昂","aroused"],["惊愕","astonished"],
+    ["眼花缭乱","dazzled"],["急切","eager"],["精力充沛","energetic"],["激情万丈","enthusiastic"],
+    ["头晕眼花","giddy"],["充满活力","invigorated"],["活泼可爱","lively"],["满心热爱","passionate"],
+    ["惊讶","surprised"],["朝气蓬勃","vibrant"]
+  ]},
+  { zh: "感激", en: "Grateful", words: [
+    ["心怀感恩","appreciative"],["感动","moved"],["感谢","thankful"],["被触动","touched"]
+  ]},
+  { zh: "快乐", en: "Joyful", words: [
+    ["逗乐","amused"],["高兴","delighted"],["开心","glad"],["愉快","happy"],
+    ["欢喜雀跃","jubilant"],["满意","pleased"],["乐不可支","tickled"]
+  ]},
+  { zh: "平静", en: "Peaceful", words: [
+    ["冷静","calm"],["头脑清醒","clear-headed"],["舒适","comfortable"],["头脑冷静","centered"],
+    ["满足","content"],["镇定","equanimous"],["成就感十足","fulfilled"],["平和","mellow"],
+    ["安静","quiet"],["放松","relaxed"],["释怀","relieved"],["满意","satisfied"],
+    ["安详","serene"],["波澜不惊","still"],["宁静","tranquil"],["信任他人","trusting"]
+  ]},
+  { zh: "重焕活力", en: "Refreshed", words: [
+    ["充满活力","enlivened"],["青春焕发","rejuvenated"],["重新振作","renewed"],
+    ["精力恢复","rested"],["精力充沛","restored"],["精神复苏","revived"]
+  ]}
+];
+
+const NVC_UNMET = [
+  { zh: "害怕", en: "Afraid", words: [
+    ["忧虑","apprehensive"],["恐惧","dread"],["不祥预感","foreboding"],["受惊","frightened"],
+    ["不信任","mistrustful"],["惊慌失措","panicked"],["惊呆","petrified"],["害怕","scared"],
+    ["疑惧","suspicious"],["恐惧","terrified"],["戒备","wary"],["担心","worried"]
+  ]},
+  { zh: "恼怒", en: "Annoyed", words: [
+    ["恼火","aggravated"],["沮丧","dismayed"],["不满","disgruntled"],["不悦","displeased"],
+    ["懊恼","exasperated"],["沮丧","frustrated"],["急躁","impatient"],["恼怒","irritated"],["生气","irked"]
+  ]},
+  { zh: "愤怒", en: "Angry", words: [
+    ["气愤","enraged"],["狂怒","furious"],["激怒","incensed"],["气愤","indignant"],
+    ["愤怒","irate"],["暴怒","livid"],["火冒三丈","outraged"],["愤恨","resentful"]
+  ]},
+  { zh: "厌恶", en: "Aversion", words: [
+    ["心怀敌意","animosity"],["震惊","appalled"],["鄙视","contempt"],["厌恶","disgusted"],
+    ["不喜欢","dislike"],["恨","hate"],["惊恐","horrified"],["充满敌意","hostile"],["反感","repulsed"]
+  ]},
+  { zh: "困惑", en: "Confused", words: [
+    ["矛盾","ambivalent"],["困惑","baffled"],["不知所措","bewildered"],["茫然","dazed"],
+    ["犹豫","hesitant"],["迷失","lost"],["迷惑不解","mystified"],["困惑","perplexed"],
+    ["困惑","puzzled"],["纠结","torn"]
+  ]},
+  { zh: "断离联系", en: "Disconnected", words: [
+    ["疏远","alienated"],["冷淡","aloof"],["冷漠","apathetic"],["厌倦","bored"],
+    ["冷漠无情","cold"],["冷漠疏离","detached"],["冷淡疏远","distant"],["心烦意乱","distracted"],
+    ["冷漠","indifferent"],["麻木呆滞","numb"],["疏远","removed"],["失去兴趣","uninterested"],["孤僻","withdrawn"]
+  ]},
+  { zh: "忧虑", en: "Disquiet", words: [
+    ["激动","agitated"],["惊慌","alarmed"],["极其困惑","discombobulated"],["心乱如麻","disconcerted"],
+    ["感到困扰","disturbed"],["忐忑不安","perturbed"],["七上八下","rattled"],["心神不宁","restless"],
+    ["震惊","shocked"],["吃惊","startled"],["惊讶","surprised"],["困扰","troubled"],
+    ["动荡不安","turbulent"],["骚乱","turmoil"],["不自在","uncomfortable"],["不安","uneasy"],
+    ["心绪不宁","unnerved"],["动荡不安","unsettled"],["沮丧","upset"]
+  ]},
+  { zh: "尴尬", en: "Embarrassed", words: [
+    ["羞愧","ashamed"],["懊恼","chagrined"],["心慌","flustered"],["内疚","guilty"],
+    ["羞愧难当","mortified"],["自我意识","self-conscious"]
+  ]},
+  { zh: "疲劳", en: "Fatigue", words: [
+    ["垂头丧气","beat"],["疲惫不堪","burnt out"],["筋疲力尽","depleted"],["疲惫不堪","exhausted"],
+    ["昏昏欲睡","lethargic"],["倦怠","listless"],["困乏","sleepy"],
+    ["疲劳厌烦","tired"],["厌烦","weary"],["疲惫不堪","worn out"]
+  ]},
+  { zh: "痛苦", en: "Pain", words: [
+    ["苦恼","agony"],["苦闷煎熬","anguished"],["丧失亲友","bereaved"],["崩溃","devastated"],
+    ["悲伤痛苦","grief"],["悲伤欲绝","heartbroken"],["受伤","hurt"],["孤独","lonely"],
+    ["悲惨","miserable"],["遗憾","regretful"],["懊悔","remorseful"]
+  ]},
+  { zh: "伤心", en: "Sad", words: [
+    ["郁闷","depressed"],["垂头丧气","dejected"],["绝望","despair"],["沮丧","despondent"],
+    ["失望","disappointed"],["灰心","discouraged"],["心情沉重","disheartened"],["孤独绝望","forlorn"],
+    ["阴郁","gloomy"],["丧失希望","heavy-hearted"],["丧失希望","hopeless"],["忧郁","melancholy"],
+    ["不开心","unhappy"],["极不愉快","wretched"]
+  ]},
+  { zh: "紧张", en: "Tense", words: [
+    ["焦虑","anxious"],["胡思乱想","cranky"],["苦恼","distressed"],["心烦意乱","distraught"],
+    ["急躁","edgy"],["烦躁","fidgety"],["疲惫不堪","frazzled"],["易怒","irritable"],
+    ["紧张不安","jittery"],["紧张不安","nervous"],["不知所措","overwhelmed"],
+    ["焦躁不安","restless"],["焦虑紧张","stressed-out"]
+  ]},
+  { zh: "脆弱", en: "Vulnerable", words: [
+    ["脆弱不堪","fragile"],["谨慎","guarded"],["无能为力","helpless"],["缺乏信心","insecure"],
+    ["猜忌疑虑","leery"],["寡言少语","reserved"],["神经敏感","sensitive"],["颤颤巍巍","shaky"]
+  ]},
+  { zh: "向往", en: "Yearning", words: [
+    ["羡慕","envious"],["嫉妒","jealous"],["渴望","longing"],["怀旧","nostalgic"],
+    ["苦思","pining"],["依依不舍","wistful"]
+  ]}
+];
+
+/* ============================================ DASHBOARD DIMENSIONS ============================================ */
+const DIMENSIONS = [
+  { key: "physical", zh: "生理状况", en: "Physical" },
+  { key: "financial", zh: "财政状况", en: "Financial" },
+  { key: "mental", zh: "心理状况", en: "Mental" },
+  { key: "community", zh: "朋友 / 社区", en: "Friends / Community" },
+];
+
+const STORAGE_KEY = "eo_5pct_companion_v1";
+const HISTORY_KEY = "eo_5pct_history_v1";
+
+/* ============================================ STATE ============================================ */
+function getCurrentMonthValue() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+}
+
+function getPrevMonth(monthStr) {
+  if (!monthStr) return null;
+  const [y, m] = monthStr.split("-").map(Number);
+  const d = new Date(y, m-2, 1);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+}
+
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || {}; }
+  catch(e) { return {}; }
+}
+
+function saveToHistory(monthKey, data) {
+  if (!monthKey) return;
+  const hist = loadHistory();
+  hist[monthKey] = data;
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(hist)); } catch(e) {}
+}
+
+function loadCurrent() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch(e) { return {}; }
+}
+
+function saveCurrent() {
+  const data = collectData();
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+  if (data.meetingMonth) saveToHistory(data.meetingMonth, data);
+  refreshComparisons();
+}
+
+function collectData() {
+  const data = {
+    memberName: document.getElementById("memberName").value,
+    forumName: document.getElementById("forumName").value,
+    meetingMonth: document.getElementById("meetingMonth").value,
+    vision: document.getElementById("vision").value,
+    mission: document.getElementById("mission").value,
+    dashboard: {},
+    weather: {
+      open: document.getElementById("weatherOpen").value,
+      close: document.getElementById("weatherClose").value
+    },
+    reflections: {},
+    celebrations: document.getElementById("celebrations").value,
+    parkingLot: parkingLot
+  };
+  DIMENSIONS.forEach(d => {
+    const slider = document.getElementById(`dim_${d.key}`);
+    if (slider) data.dashboard[d.key] = parseInt(slider.value, 10);
+  });
+  ["work","family","personal","future"].forEach(cat => {
+    data.reflections[cat] = {
+      feelings: document.getElementById(`${cat}_feelings`).value,
+      headline: document.getElementById(`${cat}_headline`).value,
+      significance: document.getElementById(`${cat}_significance`).value
+    };
+  });
+  return data;
+}
+
+function applyData(data) {
+  if (!data) return;
+  document.getElementById("memberName").value = data.memberName || "";
+  document.getElementById("forumName").value = data.forumName || "";
+  document.getElementById("meetingMonth").value = data.meetingMonth || getCurrentMonthValue();
+  if (data.vision) document.getElementById("vision").value = data.vision;
+  if (data.mission) document.getElementById("mission").value = data.mission;
+  if (data.dashboard) {
+    DIMENSIONS.forEach(d => {
+      const slider = document.getElementById(`dim_${d.key}`);
+      if (slider && data.dashboard[d.key] != null) {
+        slider.value = data.dashboard[d.key];
+        slider.dispatchEvent(new Event("input"));
+      }
+    });
+  }
+  if (data.weather) {
+    document.getElementById("weatherOpen").value = data.weather.open || "";
+    document.getElementById("weatherClose").value = data.weather.close || "";
+  }
+  if (data.reflections) {
+    ["work","family","personal","future"].forEach(cat => {
+      const r = data.reflections[cat] || {};
+      document.getElementById(`${cat}_feelings`).value = r.feelings || "";
+      document.getElementById(`${cat}_headline`).value = r.headline || "";
+      document.getElementById(`${cat}_significance`).value = r.significance || "";
+      updateMeter(cat);
+    });
+  }
+  document.getElementById("celebrations").value = data.celebrations || "";
+  parkingLot = Array.isArray(data.parkingLot) ? data.parkingLot : [];
+  renderParkingLot();
+  refreshComparisons();
+}
+
+/* ============================================ DASHBOARD RENDER ============================================ */
+function renderDashboard() {
+  const grid = document.getElementById("dashboardGrid");
+  grid.innerHTML = "";
+  DIMENSIONS.forEach(d => {
+    const cell = document.createElement("div");
+    cell.className = "dim";
+    cell.innerHTML = `
+      <div class="dim-label">
+        <span>${d.zh}<br><span class="en">${d.en}</span></span>
+      </div>
+      <div class="dim-row">
+        <input type="range" min="1" max="10" value="5" id="dim_${d.key}">
+        <span class="val" id="val_${d.key}">5</span>
+      </div>
+      <div class="last-month" id="last_${d.key}"></div>
+    `;
+    grid.appendChild(cell);
+  });
+  DIMENSIONS.forEach(d => {
+    const slider = document.getElementById(`dim_${d.key}`);
+    const val = document.getElementById(`val_${d.key}`);
+    slider.addEventListener("input", () => {
+      val.textContent = slider.value;
+      saveCurrent();
+    });
+  });
+}
+
+function refreshComparisons() {
+  const monthInput = document.getElementById("meetingMonth").value;
+  const prevMonth = getPrevMonth(monthInput);
+  const hist = loadHistory();
+  const prev = prevMonth ? hist[prevMonth] : null;
+
+  // Dashboard last month
+  DIMENSIONS.forEach(d => {
+    const lastEl = document.getElementById(`last_${d.key}`);
+    const cur = parseInt(document.getElementById(`dim_${d.key}`).value, 10);
+    if (prev && prev.dashboard && prev.dashboard[d.key] != null) {
+      const lastVal = prev.dashboard[d.key];
+      let trend = "";
+      if (cur > lastVal) trend = `<span class="trend-up">↑ +${cur-lastVal}</span>`;
+      else if (cur < lastVal) trend = `<span class="trend-down">↓ ${cur-lastVal}</span>`;
+      else trend = `<span class="trend-same">→ 持平</span>`;
+      lastEl.innerHTML = `<span>上月 / Last: <b>${lastVal}</b></span>${trend}`;
+    } else {
+      lastEl.innerHTML = `<span style="color:var(--ink-mute);">无上月数据 · No prior data</span>`;
+    }
+  });
+
+  // Weather
+  const wOpenPrev = document.getElementById("weatherOpenPrev");
+  const wClosePrev = document.getElementById("weatherClosePrev");
+  if (prev && prev.weather) {
+    wOpenPrev.innerHTML = prev.weather.open ? `上月开场 · Last open: <b>${prev.weather.open}</b>` : "";
+    wClosePrev.innerHTML = prev.weather.close ? `上月结束 · Last close: <b>${prev.weather.close}</b>` : "";
+  } else {
+    wOpenPrev.innerHTML = "";
+    wClosePrev.innerHTML = "";
+  }
+}
+
+/* ============================================ HEADLINE METERS ============================================ */
+function updateMeter(cat) {
+  const input = document.getElementById(`${cat}_headline`);
+  const meter = document.getElementById(`${cat}_headline_meter`);
+  if (!input || !meter) return;
+  const text = input.value.trim();
+  // Count Chinese chars + word approx
+  const charCount = text.length;
+  // Count sentence-end punctuation
+  const sentenceEnds = (text.match(/[。！？\.!?]/g) || []).length;
+  let warn = false;
+  let msg = "";
+  if (charCount === 0) {
+    msg = "";
+  } else if (sentenceEnds > 1) {
+    msg = `⚠️ ${sentenceEnds} 句 — 标题应只有一句 · Headline should be one sentence`;
+    warn = true;
+  } else if (charCount > 30) {
+    msg = `⚠️ ${charCount} 字 — 试试更精炼 · ${charCount} chars — try to be more concise`;
+    warn = true;
+  } else {
+    msg = `${charCount} 字 / chars · ✓`;
+  }
+  meter.textContent = msg;
+  meter.classList.toggle("warn", warn);
+}
+
+/* ============================================ ICEBERG TOGGLE ============================================ */
+function toggleIceberg(cat) {
+  document.getElementById(`${cat}_iceberg`).classList.toggle("active");
+}
+
+/* ============================================ NVC MODAL ============================================ */
+let nvcTargetId = null;
+function openNVC(targetId) {
+  nvcTargetId = targetId;
+  const cat = targetId.split("_")[0];
+  const catLabel = ({work:"事业 · Work",family:"家庭 · Family",personal:"个人 · Personal",future:"未来 · Future"})[cat] || cat;
+  document.getElementById("nvcTargetInfo").textContent = `点击词语将其追加到「${catLabel} · 感受」 · Click to append to "${catLabel} · Feelings"`;
+  switchNVCTab("met");
+  document.getElementById("nvcModal").classList.add("open");
+}
+function closeNVC() {
+  document.getElementById("nvcModal").classList.remove("open");
+}
+function switchNVCTab(tab) {
+  document.getElementById("tabMet").classList.toggle("active", tab === "met");
+  document.getElementById("tabUnmet").classList.toggle("active", tab === "unmet");
+  const data = tab === "met" ? NVC_MET : NVC_UNMET;
+  const c = document.getElementById("nvcContent");
+  c.innerHTML = "";
+  data.forEach(group => {
+    const div = document.createElement("div");
+    div.className = "nvc-cat";
+    div.innerHTML = `<h4>${group.zh}<span class="en-h">${group.en}</span></h4><div class="nvc-words"></div>`;
+    const wordsEl = div.querySelector(".nvc-words");
+    group.words.forEach(([zh, en]) => {
+      const w = document.createElement("button");
+      w.className = "nvc-word";
+      w.type = "button";
+      w.innerHTML = `${zh}<span class="en">${en}</span>`;
+      w.onclick = () => insertNVCWord(zh);
+      wordsEl.appendChild(w);
+    });
+    c.appendChild(div);
+  });
+}
+function insertNVCWord(word) {
+  if (!nvcTargetId) return;
+  const input = document.getElementById(nvcTargetId);
+  const current = input.value.trim();
+  if (!current) {
+    input.value = word;
+  } else if (current.split(/[、,， ]+/).includes(word)) {
+    // already there
+  } else {
+    input.value = current + "、" + word;
+  }
+  input.dispatchEvent(new Event("input"));
+  saveCurrent();
+}
+
+/* ============================================ PARKING LOT ============================================ */
+let parkingLot = [];
+
+function classifyTopic(text) {
+  // Heuristic: "why" / 为什么 / 该不该 / 困境 / 挣扎 / 关系 / 应不应该 / 矛盾 → why
+  // "how" / 如何 / 怎么 / 怎样 / 哪里 / 多少 / 什么 / what / how / which → how
+  const t = text.toLowerCase();
+  const whyPatterns = ["为什么","该不该","应不应","挣扎","纠结","矛盾","担心","害怕","内心","信任","背叛","失败","关系","信念","价值","why","should i","whether","decide","torn","stuck","conflict","fear"];
+  const howPatterns = ["如何","怎么","怎样","哪里","多少","什么时候","选择哪","如何招","how to","what is","where","when","which","best way","find"];
+  let whyHits = 0, howHits = 0;
+  whyPatterns.forEach(p => { if (t.includes(p)) whyHits++; });
+  howPatterns.forEach(p => { if (t.includes(p)) howHits++; });
+  if (whyHits > howHits) return "why";
+  if (howHits > whyHits) return "how";
+  return "why"; // default to why — encourage deeper topics
+}
+
+function addParkingTopic() {
+  const input = document.getElementById("plInput");
+  const text = input.value.trim();
+  if (!text) return;
+  parkingLot.push({ text, type: classifyTopic(text) });
+  input.value = "";
+  renderParkingLot();
+  saveCurrent();
+}
+
+function removeParkingTopic(idx) {
+  parkingLot.splice(idx, 1);
+  renderParkingLot();
+  saveCurrent();
+}
+
+function swapParkingTopic(idx) {
+  parkingLot[idx].type = parkingLot[idx].type === "why" ? "how" : "why";
+  renderParkingLot();
+  saveCurrent();
+}
+
+function renderParkingLot() {
+  const why = document.getElementById("plWhy");
+  const how = document.getElementById("plHow");
+  why.innerHTML = "";
+  how.innerHTML = "";
+  parkingLot.forEach((t, idx) => {
+    const item = document.createElement("div");
+    item.className = "pl-item";
+    item.innerHTML = `<span>${escapeHtml(t.text)}</span>
+      <span style="display:flex;gap:6px;">
+        <button class="swap" onclick="swapParkingTopic(${idx})" title="切换分类 / Swap category">↔</button>
+        <button onclick="removeParkingTopic(${idx})" title="删除 / Remove">×</button>
+      </span>`;
+    if (t.type === "why") why.appendChild(item);
+    else how.appendChild(item);
+  });
+  if (why.children.length === 0) why.innerHTML = `<small style="color:var(--ink-mute);">尚无 "why" 话题 · No "why" topics yet</small>`;
+  if (how.children.length === 0) how.innerHTML = `<small style="color:var(--ink-mute);">尚无 "what/how" 话题 · No "what/how" topics yet</small>`;
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+/* ============================================ JSON EXPORT/IMPORT ============================================ */
+function downloadJSON() {
+  const data = collectData();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  const month = data.meetingMonth || "current";
+  const name = (data.memberName || "member").replace(/\s+/g, "_");
+  a.href = url;
+  a.download = `5pct_${name}_${month}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function loadJSON(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      applyData(data);
+      saveCurrent();
+      alert("✓ 已载入 / Loaded");
+    } catch (err) {
+      alert("无法解析文件 / Could not parse: " + err.message);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = "";
+}
+
+function clearForm() {
+  ["memberName","forumName","weatherOpen","weatherClose","celebrations"].forEach(id => {
+    document.getElementById(id).value = "";
+  });
+  ["work","family","personal","future"].forEach(cat => {
+    document.getElementById(`${cat}_feelings`).value = "";
+    document.getElementById(`${cat}_headline`).value = "";
+    document.getElementById(`${cat}_significance`).value = "";
+    updateMeter(cat);
+  });
+  DIMENSIONS.forEach(d => {
+    const s = document.getElementById(`dim_${d.key}`);
+    s.value = 5;
+    s.dispatchEvent(new Event("input"));
+  });
+  parkingLot = [];
+  renderParkingLot();
+  document.getElementById("meetingMonth").value = getCurrentMonthValue();
+  saveCurrent();
+}
+
+/* ============================================ INIT ============================================ */
+function init() {
+  renderDashboard();
+  // Set default month
+  document.getElementById("meetingMonth").value = getCurrentMonthValue();
+
+  // Wire up auto-save
+  document.querySelectorAll("input, textarea").forEach(el => {
+    el.addEventListener("input", saveCurrent);
+    el.addEventListener("change", saveCurrent);
+  });
+
+  // Headline meters
+  ["work","family","personal","future"].forEach(cat => {
+    document.getElementById(`${cat}_headline`).addEventListener("input", () => updateMeter(cat));
+  });
+
+  // Parking lot enter key
+  document.getElementById("plInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") { e.preventDefault(); addParkingTopic(); }
+  });
+
+  // Refresh comparisons when month changes
+  document.getElementById("meetingMonth").addEventListener("change", refreshComparisons);
+
+  // Restore last session
+  const saved = loadCurrent();
+  if (saved && Object.keys(saved).length) {
+    applyData(saved);
+  } else {
+    renderParkingLot();
+    refreshComparisons();
+  }
+}
+
+window.addEventListener("DOMContentLoaded", init);
+</script>
+</body>
+</html>
